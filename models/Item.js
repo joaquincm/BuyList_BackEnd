@@ -1,10 +1,10 @@
 var mongoose = require('mongoose')
-  , Schema = mongoose.Schema;
+  , Schema = mongoose.Schema
 
 var itemSchema = new Schema({
     texto: {
       type: String,
-      required: true
+      required: [true, 'Escribe algo para añadir a la lista!']
     },
     cantidad: {
       type: String
@@ -13,8 +13,8 @@ var itemSchema = new Schema({
       type: Boolean,
       required: true
     }
+})
 
 
-});
 
 module.exports = mongoose.model('Item', itemSchema);
